@@ -22,8 +22,8 @@
     "build:dev": "tsc -p tsconfig.dev.json",
     "bundle": "webpack",
     "build:esm": "tsc --module es2015 --target es5 --outDir build/esm",
-    "build:umd": "rollup build/esm/index.js --format umd --name WakuJS --sourcemap -o build/umd/js-waku.js",
-    "build:umd:min": "cd build/umd && uglifyjs --compress --mangle --source-map --screw-ie8 --comments --o js-waku.min.js -- js-waku.js && gzip js-waku.min.js -c > js-waku.min.js.gz",
+    "build:umd": "rollup build/esm/index.js --format umd --name WakuJS --sourcemap -o build/umd/js-waku.js -p @rollup/plugin-node-resolve",
+    "build:umd:min": "cd build/umd && uglifyjs --compress --mangle --source-map --screw-ie8 --comments -o js-waku.min.js -- js-waku.js && gzip js-waku.min.js -c > js-waku.min.js.gz",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" \"./*.json\" \"*.conf.js\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
@@ -72,6 +72,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "@types/app-root-path": "^1.2.4",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.2.2",
