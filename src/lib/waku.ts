@@ -31,11 +31,6 @@ const websocketsTransportKey = Websockets.prototype[Symbol.toStringTag];
 export const DefaultPingKeepAliveValueSecs = 0;
 export const DefaultRelayKeepAliveValueSecs = 5 * 60;
 
-/**
- * DefaultPubSubTopic is the default gossipsub topic to use for Waku.
- */
-export const DefaultPubSubTopic = '/waku/2/default-waku/proto';
-
 const dbg = debug('waku:waku');
 
 export interface CreateOptions {

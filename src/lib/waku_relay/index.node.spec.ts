@@ -10,8 +10,9 @@ import {
   NOISE_KEY_1,
   NOISE_KEY_2,
 } from '../../test_utils';
+import { DefaultPubSubTopic } from '../constants';
 import { delay } from '../delay';
-import { DefaultPubSubTopic, Waku } from '../waku';
+import { Waku } from '../waku';
 import { WakuMessage } from '../waku_message';
 
 const log = debug('waku:test');

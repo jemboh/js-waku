@@ -17,8 +17,8 @@ import { InMessage } from 'libp2p-interfaces/src/pubsub';
 import { SignaturePolicy } from 'libp2p-interfaces/src/pubsub/signature-policy';
 import PeerId from 'peer-id';
 
+import { DefaultPubSubTopic } from '../constants';
 import { hexToBuf } from '../utils';
-import { CreateOptions, DefaultPubSubTopic } from '../waku';
 import { WakuMessage } from '../waku_message';
 
 import * as constants from './constants';
@@ -29,6 +29,23 @@ import { RelayHeartbeat } from './relay_heartbeat';
 const dbg = debug('waku:relay');
 
 export { RelayCodecs };
+
+export interface CreateOptions {
+  /**
+   * The PubSub Topic to use. Defaults to {@link DefaultPubSubTopic}.
+   *
+   * One and only one pubsub topic is used by Waku. This is used by:
+   * - WakuRelay to receive, route and send messages,
+   * - WakuLightPush to send messages,
+   * - WakuStore to retrieve messages.
+   *
+   * The usage of the default pubsub topic is recommended.
+   * See [Waku v2 Topic Usage Recommendations](https://rfc.vac.dev/spec/23/) for details.
+   *
+   * @default {@link DefaultPubSubTopic}
+   */
+  pubSubTopic?: string;
+}
 
 /**
  * See constructor libp2p-gossipsub [API](https://github.com/ChainSafe/js-libp2p-gossipsub#api).
