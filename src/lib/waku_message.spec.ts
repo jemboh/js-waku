@@ -1,9 +1,8 @@
 import { expect } from 'chai';
 import fc from 'fast-check';
 
-import { getPublicKey } from './version_1';
-
-import { WakuMessage } from './index';
+import { WakuMessage } from './waku_message';
+import { getPublicKey } from './waku_message/version_1';
 
 const TestContentTopic = '/test/1/waku-message/utf8';
 

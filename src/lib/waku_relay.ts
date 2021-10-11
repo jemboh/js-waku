@@ -17,14 +17,13 @@ import { InMessage } from 'libp2p-interfaces/src/pubsub';
 import { SignaturePolicy } from 'libp2p-interfaces/src/pubsub/signature-policy';
 import PeerId from 'peer-id';
 
-import { hexToBuf } from '../utils';
-import { CreateOptions, DefaultPubSubTopic } from '../waku';
-import { WakuMessage } from '../waku_message';
-
-import * as constants from './constants';
-import { RelayCodecs } from './constants';
-import { getRelayPeers } from './get_relay_peers';
-import { RelayHeartbeat } from './relay_heartbeat';
+import { hexToBuf } from './utils';
+import { CreateOptions, DefaultPubSubTopic } from './waku';
+import { WakuMessage } from './waku_message';
+import * as constants from './waku_relay/constants';
+import { RelayCodecs } from './waku_relay/constants';
+import { getRelayPeers } from './waku_relay/get_relay_peers';
+import { RelayHeartbeat } from './waku_relay/relay_heartbeat';
 
 const dbg = debug('waku:relay');
 

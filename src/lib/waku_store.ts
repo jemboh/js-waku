@@ -6,13 +6,13 @@ import Libp2p from 'libp2p';
 import { Peer } from 'libp2p/src/peer-store';
 import PeerId from 'peer-id';
 
-import { HistoryResponse_Error } from '../../proto/waku/v2/store';
-import { getPeersForProtocol, selectRandomPeer } from '../select_peer';
-import { hexToBuf } from '../utils';
-import { DefaultPubSubTopic } from '../waku';
-import { WakuMessage } from '../waku_message';
+import { HistoryResponse_Error } from '../proto/waku/v2/store';
 
-import { HistoryRPC, PageDirection } from './history_rpc';
+import { getPeersForProtocol, selectRandomPeer } from './select_peer';
+import { hexToBuf } from './utils';
+import { DefaultPubSubTopic } from './waku';
+import { WakuMessage } from './waku_message';
+import { HistoryRPC, PageDirection } from './waku_store/history_rpc';
 
 const dbg = debug('waku:store');
 

@@ -1,4 +1,4 @@
-import { IvSize } from './index';
+import { IvSize } from '../symmetric';
 
 declare global {
   interface Window {

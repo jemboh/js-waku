@@ -13,14 +13,13 @@ import {
 import { delay } from '../delay';
 import { hexToBuf } from '../utils';
 import { Waku } from '../waku';
+import { WakuMessage } from '../waku_message';
 
 import {
   generatePrivateKey,
   generateSymmetricKey,
   getPublicKey,
 } from './version_1';
-
-import { WakuMessage } from './index';
 
 const dbg = debug('waku:test:message');
 

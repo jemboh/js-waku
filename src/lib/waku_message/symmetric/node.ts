@@ -1,6 +1,6 @@
 import { createCipheriv, createDecipheriv, randomBytes } from 'crypto';
 
-import { IvSize, TagSize } from './index';
+import { IvSize, TagSize } from '../symmetric';
 
 const Algorithm = 'aes-256-gcm';
 

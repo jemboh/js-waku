@@ -5,9 +5,9 @@ import debug from 'debug';
 import { Reader } from 'protobufjs/minimal';
 
 // Protecting the user from protobuf oddities
-import * as proto from '../../proto/waku/v2/message';
+import * as proto from '../proto/waku/v2/message';
 
-import * as version_1 from './version_1';
+import * as version_1 from './waku_message/version_1';
 
 const DefaultVersion = 0;
 const dbg = debug('waku:message');

@@ -23,12 +23,12 @@ export interface Symmetric {
 
 export let symmetric: Symmetric = {} as unknown as Symmetric;
 
-import('./browser')
+import('./symmetric/browser')
   .then((mod) => {
     symmetric = mod;
   })
   .catch((eBrowser) => {
-    import('./node')
+    import('./symmetric/node')
       .then((mod) => {
         symmetric = mod;
       })

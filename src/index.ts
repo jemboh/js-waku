@@ -22,4 +22,4 @@ export { WakuRelay, RelayCodecs } from './lib/waku_relay';
 
 export { PageDirection, WakuStore, StoreCodec } from './lib/waku_store';
 
-export * as proto from './proto';
+export * as proto from './proto/index';
